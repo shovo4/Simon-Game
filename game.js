@@ -1,4 +1,3 @@
-
 var buttonColours = ["red", "blue", "green", "yellow"];
 
 var gamePattern = [];
@@ -7,16 +6,17 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
-$(document).keypress(function() {
-  if (!started) {
+// Start the game only on a spacebar press
+$(document).keypress(function(event) {
+  if (!started && event.key === ' ') {
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
+    $("#score-title").hide();
   }
 });
 
 $(".btn").click(function() {
-
   var userChosenColour = $(this).attr("id");
   userClickedPattern.push(userChosenColour);
 
@@ -27,26 +27,27 @@ $(".btn").click(function() {
 });
 
 function checkAnswer(currentLevel) {
-
-    if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
-      if (userClickedPattern.length === gamePattern.length){
-        setTimeout(function () {
-          nextSequence();
-        }, 1000);
-      }
-    } else {
-      playSound("wrong");
-      $("body").addClass("game-over");
-      $("#level-title").text("Game Over, Press Any Key to Restart");
-
+  if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+    if (userClickedPattern.length === gamePattern.length){
       setTimeout(function () {
-        $("body").removeClass("game-over");
-      }, 200);
-
-      startOver();
+        nextSequence();
+      }, 1000);
     }
-}
+  } else {
+    playSound("wrong");
+    $("body").addClass("game-over");
+    $("#level-title").text("Game Over, Press Spacebar to Restart");
 
+    // Display score
+    $("#score-title").text("Score: " + (level - 1)).show();
+
+    setTimeout(function () {
+      $("body").removeClass("game-over");
+    }, 200);
+
+    startOver();
+  }
+}
 
 function nextSequence() {
   userClickedPattern = [];
@@ -73,7 +74,11 @@ function playSound(name) {
 }
 
 function startOver() {
+  // Hide the score
+  $("#score-title").hide();
+
   level = 0;
   gamePattern = [];
   started = false;
 }
+
