@@ -16,6 +16,10 @@ body {
   margin: auto;
 
 }
+#score-title {
+  color: white;
+  /* Other styling properties for the score element */
+}
 
 .btn {
   margin: 25px;
