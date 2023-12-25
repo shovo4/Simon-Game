@@ -26,7 +26,9 @@ To play the game, clone the repository and open `index.html` in a web browser.
 - JavaScript (jQuery)
 
 ## Screenshots
-(Add screenshots of your game here)
+- ![img1](https://github.com/shovo4/Simon-Game/assets/58551093/7435d351-4c51-41eb-a860-8c58ebc3c8e7)
+- ![img2](https://github.com/shovo4/Simon-Game/assets/58551093/08972c79-99b4-4701-abd7-9f0183eb077c)
+
 
 ## Future Enhancements
 - Addition of difficulty levels (easy, medium, hard).
