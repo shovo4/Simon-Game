@@ -26,8 +26,8 @@ To play the game, clone the repository and open `index.html` in a web browser.
 - JavaScript (jQuery)
 
 ## Screenshots
-- ![img1](https://github.com/shovo4/Simon-Game/assets/58551093/7435d351-4c51-41eb-a860-8c58ebc3c8e7)
-- ![img2](https://github.com/shovo4/Simon-Game/assets/58551093/08972c79-99b4-4701-abd7-9f0183eb077c)
+- ![simon1](https://github.com/shovo4/Simon-Game/assets/58551093/4af79478-5866-4364-bd1c-ee1d8889911c)
+- ![simon2](https://github.com/shovo4/Simon-Game/assets/58551093/b6ed1936-026f-420c-b8d8-682311016180)
 
 
 ## Future Enhancements
